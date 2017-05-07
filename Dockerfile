@@ -4,7 +4,9 @@ MAINTAINER Heiko Bornholdt "heiko@bornholdt.it"
 RUN apt-get update \
 	&& \
 	apt-get install -y \
-		wget openjdk-8-jre-headless \
+		wget \
+		openjdk-8-jre-headless \
+		libmediainfo-dev \
 	&& \
     apt-get clean \
     && \
