@@ -7,6 +7,8 @@ RUN apt-get update \
 		wget \
 		openjdk-8-jre-headless \
 		libmediainfo-dev \
+		ssmtp \
+		mailutils \
 	&& \
     apt-get clean \
     && \
@@ -17,3 +19,7 @@ RUN wget http://downloads.sourceforge.net/project/filebot/filebot/FileBot_4.7.9/
 	dpkg -i filebot_4.7.9_amd64.deb \
 	&& \
 	rm filebot_4.7.9_amd64.deb
+
+COPY ssmtp.conf /ssmtp.conf
+
+COPY docker-entrypoint.sh /
